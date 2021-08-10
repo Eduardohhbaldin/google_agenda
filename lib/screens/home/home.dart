@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_agenda/models/contact.dart';
 import 'package:google_agenda/provider/contacts.dart';
+import 'package:google_agenda/screens/details/details.dart';
 import 'package:google_agenda/style.dart';
 
 class Home extends StatefulWidget {
@@ -44,7 +45,15 @@ class _HomeState extends State<Home> {
                 Icons.chevron_right,
               ),
               color: grayTheme,
-              onPressed: null,
+              onPressed: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext _) {
+                      return Details(contact);
+                    },
+                  ),
+                );
+              },
             ),
             title: Row(
               children: [
